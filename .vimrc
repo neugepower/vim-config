@@ -63,5 +63,12 @@ cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
 " "}}}
 
+" File specific "{{{
+
+" force cpp files
+au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
+
+" "}}}
+
 filetype plugin on			" enable after vundle
 filetype indent on			" enable after vundle
