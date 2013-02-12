@@ -11,6 +11,8 @@ set smarttab				" enable smart tabbing
 set shiftwidth=4			" set shift width to 4 chars (in front of a line, correspondent to smarttab)
 set tabstop=4				" set tab stops to 4 chars (not in front of line)
 
+syntax on					" syntax highlighting
+
 colorscheme desert			" enable color scheme
 
 filetype off				" required for vundle
@@ -25,10 +27,23 @@ call vundle#rc()
 " let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
+Bundle 'oblitum/clang_complete'
+Bundle 'taglist.vim'
 
 " "}}}
 
+" Plugins configuration "{{{
+
+" TagList window width
+let g:Tlist_WinWidth = 50
+
+" "}}}
+
+
 " Mapping "{{{
+
+" Toogle TagList
+map P :TlistToggle<CR>
 
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>

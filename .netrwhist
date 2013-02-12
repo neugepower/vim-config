@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/cneuge/projects/senf/senf/Ext/NetEmu'
+let g:netrw_dirhist_2='/home/cneuge/projects/senf'
+let g:netrw_dirhist_3='/home/cneuge/projects/senf/senf'
+let g:netrw_dirhist_4='/home/cneuge/projects/senf/senf/Ext'
+let g:netrw_dirhist_5='/home/cneuge/projects/senf/senf/Ext/NetEmu'
+let g:netrw_dirhist_6='/home/cneuge/projects/senf'
