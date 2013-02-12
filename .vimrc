@@ -28,6 +28,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'oblitum/clang_complete'
+
+Bundle 'bufexplorer.zip'
 Bundle 'taglist.vim'
 
 " "}}}
@@ -44,6 +46,8 @@ let g:Tlist_WinWidth = 50
 
 " Toogle TagList
 map P :TlistToggle<CR>
+" Toogle BufferList
+map B :BufExplorer<CR>
 
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
