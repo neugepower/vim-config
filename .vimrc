@@ -1,4 +1,30 @@
 
+" Vundle plugins "{{{
+
+filetype off				" required for vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle. Required!
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'Valloric/vim-valloric-colorscheme'
+Bundle 'bufexplorer.zip'
+Bundle 'AutoTag'
+
+" "}}}
+
+" Plugins configuration "{{{
+
+let g:tagbar_width = 50
+let g:tagbar_left = 1
+
+" "}}}
+
 " General "{{{
 
 set nocompatible			" disable vi-incompatible mode
@@ -14,36 +40,11 @@ set tabstop=4				" set tab stops to 4 chars (not in front of line)
 
 syntax on					" syntax highlighting
 
-colorscheme desert			" enable color scheme
+colorscheme valloric		" enable color scheme
 
 " save foldings
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
-
-filetype off				" required for vundle
-
-" "}}}
-
-" Plugins "{{{
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle. Required!
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
-Bundle 'majutsushi/tagbar'
-Bundle 'bufexplorer.zip'
-Bundle 'AutoTag'
-
-" "}}}
-
-" Plugins configuration "{{{
-
-let g:tagbar_width = 50
-let g:tagbar_left = 1
 
 " "}}}
 
