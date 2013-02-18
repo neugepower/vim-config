@@ -34,22 +34,22 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
 Bundle 'bufexplorer.zip'
-Bundle 'taglist.vim'
 
 " "}}}
 
 " Plugins configuration "{{{
 
-" TagList window width
-let g:Tlist_WinWidth = 50
+let g:tagbar_width = 50
+let g:tagbar_left = 1
 
 " "}}}
 
 " Mapping "{{{
 
 " Toogle TagList
-map P :TlistToggle<CR>
+map P :TagbarToggle<CR>
 " Toogle BufferList
 map B :BufExplorer<CR>
 " Window switching
