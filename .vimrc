@@ -40,7 +40,7 @@ set tabstop=4				" set tab stops to 4 chars (not in front of line)
 
 syntax on					" syntax highlighting
 
-colorscheme valloric		" enable color scheme
+colorscheme desert			" enable color scheme
 
 " save foldings
 au BufWinLeave * silent! mkview
