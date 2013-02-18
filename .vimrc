@@ -17,8 +17,8 @@ syntax on					" syntax highlighting
 colorscheme desert			" enable color scheme
 
 " save foldings
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 filetype off				" required for vundle
 
