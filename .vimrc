@@ -10,9 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
-Bundle 'Valloric/vim-valloric-colorscheme'
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
 
@@ -37,6 +35,7 @@ set smartindent				" enable autoindenting for a new line
 set smarttab				" enable smart tabbing
 set shiftwidth=4			" set shift width to 4 chars (in front of a line, correspondent to smarttab)
 set tabstop=4				" set tab stops to 4 chars (not in front of line)
+set cursorline				" mark current line
 
 syntax on					" syntax highlighting
 
