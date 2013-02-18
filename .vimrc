@@ -36,6 +36,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'bufexplorer.zip'
+Bundle 'AutoTag'
 
 " "}}}
 
