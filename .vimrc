@@ -32,7 +32,7 @@ call vundle#rc()
 " let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'oblitum/clang_complete'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle 'bufexplorer.zip'
 Bundle 'taglist.vim'
