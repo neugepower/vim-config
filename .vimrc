@@ -13,6 +13,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
+Bundle 'a.vim'
 
 " "}}}
 
@@ -20,6 +21,14 @@ Bundle 'AutoTag'
 
 let g:tagbar_width = 50
 let g:tagbar_left = 1
+
+" special mapping for senf (jump between files)
+let g:alternateExtensions_cc = "hh,ih"
+let g:alternateExtensions_ct = "hh,ih"
+let g:alternateExtensions_cti = "hh,ih"
+let g:alternateExtensions_cci = "hh,ih"
+let g:alternateExtensions_hh = "cc,cci,ct,cti"
+let g:alternateExtensions_ih = "cc,cci,ct,cti"
 
 " "}}}
 
