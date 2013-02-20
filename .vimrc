@@ -62,6 +62,8 @@ au BufWinEnter * silent! loadview
 map P :TagbarToggle<CR>
 " Toogle BufferList
 map B :BufExplorer<CR>
+" Toogle NERDTree
+map T :NERDTreeToggle<CR>
 " Window switching
 map <silent> <A-Up> :wincmd k<CR>
 map <silent> <A-Down> :wincmd j<CR>
