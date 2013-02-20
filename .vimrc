@@ -40,25 +40,29 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " General "{{{
 
-set nocompatible				" disable vi-incompatible mode
-set enc=utf-8					" enable utf-8 (vim internal)
-set fileencoding=utf-8			" enable utf-8 also for files
-set number						" enable line numbers
-set nowrap						" disable line wrapping after 80 chars
-set foldmethod=marker 			" enable folding by markers
-set smartindent					" enable autoindenting for a new line
-set smarttab					" enable smart tabbing
-set shiftwidth=4				" set shift width to 4 chars (in front of a line, correspondent to smarttab)
-set tabstop=4					" set tab stops to 4 chars (not in front of line)
-set cursorline					" mark current line
-set tags=./tags,tags;			" look for a tag file (from current folder until root .)
-set wildmode=longest,list,full 	" behave more unix like (complete as much as possible)
-set wildmenu					" activate wildmenu
+syntax on                              " syntax highlighting
 
-syntax on						" syntax highlighting
+set nocompatible                       " disable vi-incompatible mode
+set enc=utf-8                          " enable utf-8 (vim internal)
+set fileencoding=utf-8                 " enable utf-8 also for files
+set number                             " enable line numbers
+set nowrap                             " disable line wrapping after 80 chars
+set foldmethod=marker                  " enable folding by markers
+set smartindent                        " enable autoindenting for a new line
+set smarttab                           " enable smart tabbing
+set shiftwidth=2                       " set shift width to 4 chars (in front of a line, correspondent to smarttab)
+set tabstop=2                          " set tab stops to 4 chars (not in front of line)
+set softtabstop=2                      " set tab stops to 4 chars (not in front of line)
+set expandtab                          " turn tab into spaces
+set cursorline                         " mark current line
+set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
+set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
+set wildmenu                           " activate wildmenu
+set completeopt=menu,menuone,longest   " use menu for completion, even if one entry exists, disable preview
 
-set t_Co=256					" activate 256 colors
-colorscheme wombat256mod		" enable color scheme
+set t_Co=256                           " activate 256 colors
+colorscheme wombat256mod               " enable color scheme
+set background=dark                    " using a dark terminal
 
 " save foldings
 au BufWinLeave * silent! mkview
