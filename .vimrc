@@ -24,7 +24,6 @@ Bundle 'molokai'
 " Plugins configuration "{{{
 
 let g:tagbar_width = 50
-let g:tagbar_left = 1
 
 " special mapping for senf (jump between files)
 let g:alternateExtensions_cc = "hh,ih"
