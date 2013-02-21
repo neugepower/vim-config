@@ -37,8 +37,13 @@ let g:alternateExtensions_ih = "cc,cci,ct,cti"
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " syntastic
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_warning_symbol = '⚠⚠'
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " "}}}
 
@@ -70,6 +75,7 @@ set smartcase
 set t_Co=256                           " activate 256 colors
 colorscheme wombat256mod               " enable color scheme
 set background=dark                    " using a dark terminal
+:hi Error ctermfg=Red ctermbg=242      " especially for wombat + syntastic (gray background instead of red)
 
 " save foldings
 set viewoptions=folds,cursor           " save cursor position and folding on :mkview
