@@ -8,8 +8,9 @@ call vundle#rc()
 
 " let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
@@ -36,6 +37,10 @@ let g:alternateExtensions_ih = "cc,cci,ct,cti"
 " ycm settings
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" syntastic
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
 " "}}}
 
 " General "{{{
@@ -59,6 +64,9 @@ set tags=./tags,tags;                  " look for a tag file (from current folde
 set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
 set wildmenu                           " activate wildmenu
 set completeopt=menu,menuone,longest   " use menu for completion, even if one entry exists, disable preview
+
+set ignorecase
+set smartcase
 
 set t_Co=256                           " activate 256 colors
 colorscheme wombat256mod               " enable color scheme
