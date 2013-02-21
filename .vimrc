@@ -73,6 +73,7 @@ colorscheme wombat256mod               " enable color scheme
 set background=dark                    " using a dark terminal
 
 " save foldings
+set viewoptions=folds,cursor           " save cursor position and folding on :mkview
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
