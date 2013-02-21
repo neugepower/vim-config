@@ -67,7 +67,6 @@ set cursorline                         " mark current line
 set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
 set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
 set wildmenu                           " activate wildmenu
-set completeopt=menu,menuone,longest   " use menu for completion, even if one entry exists, disable preview
 
 set ignorecase
 set smartcase
