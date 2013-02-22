@@ -24,6 +24,7 @@ Bundle 'molokai'
 
 " Plugins configuration "{{{
 
+let g:tagbar_sort = 0 
 let g:tagbar_width = 50
 
 " special mapping for senf (jump between files)
@@ -41,6 +42,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:syntastic_error_symbol = '✗✗'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_check_on_open = 1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -102,7 +104,6 @@ map <silent> <A-Up> :wincmd k<CR>
 map <silent> <A-Down> :wincmd j<CR>
 map <silent> <A-Left> :wincmd h<CR>
 map <silent> <A-Right> :wincmd l<CR>
-
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
