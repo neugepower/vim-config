@@ -100,16 +100,18 @@ au BufWinEnter * silent! loadview
 " Mapping "{{{
 
 " Toogle TagList
-map P :TagbarToggle<CR>
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+" Toogle Command-T
+nnoremap <silent> <leader>c :CommandT<CR>
 " Toogle BufferList
-map B :BufExplorer<CR>
+nnoremap <Leader>b :BufExplorer<CR>
 " Toogle NERDTree
-map T :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 " Window switching
-map <silent> <A-S-Up> :wincmd k<CR>
-map <silent> <A-S-Down> :wincmd j<CR>
-map <silent> <A-S-Left> :wincmd h<CR>
-map <silent> <A-S-Right> :wincmd l<CR>
+nnoremap <silent> <A-S-Up> :wincmd k<CR>
+nnoremap <silent> <A-S-Down> :wincmd j<CR>
+nnoremap <silent> <A-S-Left> :wincmd h<CR>
+nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
