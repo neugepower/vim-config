@@ -6,6 +6,13 @@ For a fresh installation simply follow these steps:
 4. Start vim and install bundles: run :BundleInstall inside vim
 5. YouCompleteMe: needs to be compiled (follow instructions at https://github.com/Valloric/YouCompleteMe) or remove/uncomment "Bundle 'Valloric/YouCompleteMe'" from .vimrc!
 6. ctags: needed for some plugins
+7. Command-T needs to be compiled (https://github.com/wincent/Command-T)
+
+Especially for python:
+
+pip install jedi
+pip install pep8
+
 
 finished
 
