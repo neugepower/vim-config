@@ -14,15 +14,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'wincent/Command-T'
+
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
 Bundle 'a.vim'
 " colorschemes
 Bundle 'wombat256.vim'
 Bundle 'molokai'
-" needed L9 for FuzzyFinder
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'python.vim'
 
 " "}}}
 
