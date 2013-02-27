@@ -50,6 +50,9 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checker="flake8"
 
+" statusline: file name + encoding + syntastic output
+set statusline=%f
+set statusline+=[%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -81,6 +84,10 @@ set cursorline                         " mark current line
 set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
 set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
 set wildmenu                           " activate wildmenu
+set undofile                           " enable undo files (see also undodir)
+set dir=~/tmp,/tmp,$TEMP               " set for swap files
+set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
+set laststatus=2                       " show statusline all the time
 
 set ignorecase
 set smartcase
@@ -100,13 +107,13 @@ au BufWinEnter * silent! loadview
 " Mapping "{{{
 
 " Toogle TagList
-nnoremap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 " Toogle Command-T
 nnoremap <silent> <leader>c :CommandT<CR>
 " Toogle BufferList
-nnoremap <Leader>b :BufExplorer<CR>
+nnoremap B :BufExplorer<CR>
 " Toogle NERDTree
-nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
 " Window switching
 nnoremap <silent> <A-S-Up> :wincmd k<CR>
 nnoremap <silent> <A-S-Down> :wincmd j<CR>
