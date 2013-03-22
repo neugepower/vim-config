@@ -21,46 +21,9 @@ Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
 Bundle 'a.vim'
 " colorschemes
-Bundle 'wombat256.vim'
+Bundle 'michalbachowski/vim-wombat256mod.git'
 Bundle 'molokai'
 Bundle 'python.vim'
-
-" "}}}
-
-" Plugins configuration "{{{
-
-let g:tagbar_sort = 0 
-let g:tagbar_width = 50
-
-" special mapping for senf (jump between files)
-let g:alternateExtensions_cc = "hh,ih"
-let g:alternateExtensions_ct = "hh,ih"
-let g:alternateExtensions_cti = "hh,ih"
-let g:alternateExtensions_cci = "hh,ih"
-let g:alternateExtensions_hh = "cc,cci,ct,cti"
-let g:alternateExtensions_ih = "cc,cci,ct,cti"
-
-" ycm settings
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" syntastic
-let g:syntastic_error_symbol = '✗✗'
-let g:syntastic_warning_symbol = '⚠⚠'
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_check_on_open = 1
-let g:syntastic_python_checker="flake8"
-
-" statusline: file name + encoding + syntastic output
-set statusline=%f
-set statusline+=[%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " "}}}
 
@@ -97,6 +60,10 @@ colorscheme wombat256mod               " enable color scheme
 set background=dark                    " using a dark terminal
 :hi Error ctermfg=Red ctermbg=242      " especially for wombat + syntastic (gray background instead of red)
 
+" statusline: file name + encoding
+set statusline=%f
+set statusline+=[%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]
+
 " save foldings
 set viewoptions=folds,cursor           " save cursor position and folding on :mkview
 au BufWinLeave * silent! mkview
@@ -122,6 +89,10 @@ nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
+" by typing ~~ we exit insert/visual mode
+inoremap ~~ <Esc>
+vnoremap ~~ <Esc>
+
 " "}}}
 
 " File specific "{{{
@@ -130,6 +101,47 @@ cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
 
 " "}}}
+
+" Plugins configuration "{{{
+
+let g:tagbar_sort = 1 
+let g:tagbar_width = 50
+
+" special mapping for senf (jump between files)
+let g:alternateExtensions_cc = "hh,ih"
+let g:alternateExtensions_ct = "hh,ih"
+let g:alternateExtensions_cti = "hh,ih"
+let g:alternateExtensions_cci = "hh,ih"
+let g:alternateExtensions_hh = "cc,cci,ct,cti"
+let g:alternateExtensions_ih = "cc,cci,ct,cti"
+
+" ycm settings
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" syntastic
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_warning_symbol = '⚠⚠'
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_check_on_open = 1
+let g:syntastic_python_checker="flake8"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" Jedi (let ycm take over the control)
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+
+" NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
+
+" "}}}
+
 
 filetype plugin on			" enable after vundle
 filetype indent on			" enable after vundle
