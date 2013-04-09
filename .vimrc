@@ -90,8 +90,9 @@ nnoremap <silent> <A-S-Right> :wincmd l<CR>
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
 " by typing ~~ we exit insert/visual mode
-inoremap ~~ <Esc>
-vnoremap ~~ <Esc>
+nnoremap `` <Esc>
+inoremap `` <Esc>
+vnoremap `` <Esc>
 
 " "}}}
 
