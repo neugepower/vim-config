@@ -20,10 +20,10 @@ Bundle 'wincent/Command-T'
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
 Bundle 'a.vim'
+Bundle 'python.vim'
 " colorschemes
 Bundle 'wombat256.vim'
 Bundle 'molokai'
-Bundle 'python.vim'
 
 " "}}}
 
@@ -61,6 +61,9 @@ set statusline+=%*
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.class$']
 
 " "}}}
 
