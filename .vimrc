@@ -138,7 +138,7 @@ let g:jedi#auto_initialization = 1
 let g:jedi#popup_on_dot = 0
 
 " NERDTree
-let NERDTreeIgnore = ['\.pyc$', '\.o$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
 
 " "}}}
 
