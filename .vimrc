@@ -124,7 +124,6 @@ let g:syntastic_error_symbol = '✗✗'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_check_on_open = 1
-let g:syntastic_python_checker="flake8"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
