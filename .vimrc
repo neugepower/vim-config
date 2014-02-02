@@ -1,6 +1,8 @@
 
 " Vundle plugins "{{{
 
+set nocompatible                       " disable vi-incompatible mode
+
 filetype off				" required for vundle
 
 set rtp+=~/.vim/bundle/vundle/
@@ -51,6 +53,7 @@ set undofile                           " enable undo files (see also undodir)
 set dir=~/tmp,/tmp,$TEMP               " set for swap files
 set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
 set laststatus=2                       " show statusline all the time
+set backspace=indent,eol,start         " Please Fill Me!!
 
 set ignorecase
 set smartcase
@@ -139,6 +142,9 @@ let g:jedi#popup_on_dot = 0
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
+
+" Eclim
+let g:EclimCompletionMethod = 'omnifunc'
 
 " "}}}
 
