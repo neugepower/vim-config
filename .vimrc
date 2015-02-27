@@ -18,6 +18,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'wincent/Command-T'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'marijnh/tern_for_vim'
 
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
@@ -27,7 +31,7 @@ Bundle 'michalbachowski/vim-wombat256mod.git'
 Bundle 'molokai'
 Bundle 'python.vim'
 
-" "}}}
+" "}}} 
 
 " General "{{{
 
