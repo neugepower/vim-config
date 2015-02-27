@@ -13,6 +13,15 @@ Especially for python:
 pip install jedi
 pip install pep8
 
+JavaScript:
+
+install npm and do
+
+npm install -g jshint
+
+go to .vim/bundle/tern_for_vim and do
+
+npm install 
 
 finished
 
