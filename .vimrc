@@ -22,14 +22,17 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'marijnh/tern_for_vim'
-
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'python.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'AutoTag'
 Bundle 'a.vim'
+
 " colorschemes
 Bundle 'michalbachowski/vim-wombat256mod.git'
+Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'molokai'
-Bundle 'python.vim'
 
 " "}}} 
 
@@ -63,9 +66,10 @@ set ignorecase
 set smartcase
 
 set t_Co=256                           " activate 256 colors
-colorscheme wombat256mod               " enable color scheme
-set background=dark                    " using a dark terminal
-:hi Error ctermfg=Red ctermbg=242      " especially for wombat + syntastic (gray background instead of red)
+let g:solarized_termcolors=256
+colorscheme solarized                  " enable color scheme
+set background=light                    " using a dark terminal
+":hi Error ctermfg=Red ctermbg=242      " especially for wombat + syntastic (gray background instead of red)
 
 " statusline: file name + encoding
 set statusline=%f
