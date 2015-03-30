@@ -2,37 +2,39 @@
 " Vundle plugins "{{{
 
 set nocompatible                       " disable vi-incompatible mode
-
-filetype off				" required for vundle
+filetype off				           " required for vundle
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle. Required!
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
-Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'wincent/Command-T'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'python.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'AutoTag'
-Bundle 'a.vim'
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'wincent/Command-T'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'python.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'AutoTag'
+Plugin 'a.vim'
 
 " colorschemes
-Bundle 'michalbachowski/vim-wombat256mod.git'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'molokai'
+Plugin 'michalbachowski/vim-wombat256mod.git'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'molokai'
+
+call vundle#end()
+
 
 " "}}} 
 
