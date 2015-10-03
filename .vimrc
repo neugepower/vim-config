@@ -59,7 +59,7 @@ set tags=./tags,tags;                  " look for a tag file (from current folde
 set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
 set wildmenu                           " activate wildmenu
 set undofile                           " enable undo files (see also undodir)
-set dir=~/tmp,/tmp,$TEMP               " set for swap files
+set dir=~/.tmp,/tmp,$TEMP              " set for swap files
 set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
