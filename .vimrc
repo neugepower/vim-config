@@ -113,6 +113,8 @@ vnoremap `` <Esc>
 
 " force cpp files
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
+au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex set wrap
 
 " "}}}
 
