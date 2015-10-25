@@ -115,7 +115,10 @@ vnoremap `` <Esc>
 " force cpp files
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
-au BufNewFile,BufRead *.tex set wrap
+au BufNewFile,BufRead *.tex setlocal wrap
+au BufNewFile,BufRead *.tex setlocal formatoptions=ant
+au BufNewFile,BufRead *.tex setlocal textwidth=150
+au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " "}}}
 
@@ -158,6 +161,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
+
+"Vimtex (Latex)
+let g:vimtex_view_general_viewer = 'zathura'
 
 " "}}}
 
