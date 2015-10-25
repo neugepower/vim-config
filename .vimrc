@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " let Vundle manage Vundle. Required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -27,6 +27,7 @@ Plugin 'python.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
+Plugin 'lervag/vimtex'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
