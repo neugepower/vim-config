@@ -102,11 +102,12 @@ nnoremap <silent> <A-S-Left> :wincmd h<CR>
 nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
-
 " by typing ~~ we exit insert/visual mode
 nnoremap `` <Esc>
 inoremap `` <Esc>
 vnoremap `` <Esc>
+" Open latex preview
+nnoremap <silent> <leader>v :VimtexView<CR>
 
 " "}}}
 
@@ -117,7 +118,7 @@ au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.tex setlocal wrap
 au BufNewFile,BufRead *.tex setlocal formatoptions=ant
-au BufNewFile,BufRead *.tex setlocal textwidth=150
+au BufNewFile,BufRead *.tex setlocal textwidth=120
 au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " "}}}
