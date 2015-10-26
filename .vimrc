@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " let Vundle manage Vundle. Required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -28,6 +28,7 @@ Plugin 'python.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
+Plugin 'lervag/vimtex'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -60,7 +61,7 @@ set tags=./tags,tags;                  " look for a tag file (from current folde
 set wildmode=longest,list,full         " behave more unix like (complete as much as possible)
 set wildmenu                           " activate wildmenu
 set undofile                           " enable undo files (see also undodir)
-set dir=~/tmp,/tmp,$TEMP               " set for swap files
+set dir=~/.tmp,/tmp,$TEMP              " set for swap files
 set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
@@ -102,11 +103,12 @@ nnoremap <silent> <A-S-Left> :wincmd h<CR>
 nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
-
 " by typing ~~ we exit insert/visual mode
 nnoremap `` <Esc>
 inoremap `` <Esc>
 vnoremap `` <Esc>
+" Open latex preview
+nnoremap <silent> <leader>v :VimtexView<CR>
 
 " "}}}
 
@@ -114,6 +116,11 @@ vnoremap `` <Esc>
 
 " force cpp files
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
+au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex setlocal wrap
+au BufNewFile,BufRead *.tex setlocal formatoptions=ant
+au BufNewFile,BufRead *.tex setlocal textwidth=120
+au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " "}}}
 
@@ -156,6 +163,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
+
+"Vimtex (Latex)
+let g:vimtex_view_general_viewer = 'zathura'
 
 " "}}}
 
