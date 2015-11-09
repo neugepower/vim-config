@@ -29,6 +29,7 @@ Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'lervag/vimtex'
+Plugin 'airblade/vim-gitgutter'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
