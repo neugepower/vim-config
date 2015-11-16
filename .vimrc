@@ -159,8 +159,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger = '<s-a>'
-let g:UltiSnipsListSnippets = '<s-l>'
+let g:UltiSnipsExpandTrigger = '<s-right>'
+let g:UltiSnipsListSnippets = '<s-down>'
 let g:UltiSnipsJumpForwardTrigger = '<right>'
 let g:UltiSnipsJumpBackwardTrigger = '<left>'
 
