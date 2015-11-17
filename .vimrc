@@ -27,6 +27,7 @@ Plugin 'python.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -50,9 +51,9 @@ set nowrap                             " disable line wrapping after 80 chars
 set foldmethod=marker                  " enable folding by markers
 set smartindent                        " enable autoindenting for a new line
 set smarttab                           " enable smart tabbing
-set shiftwidth=4                       " set shift width to 4 chars (in front of a line, correspondent to smarttab)
-set tabstop=4                          " set tab stops to 4 chars (not in front of line)
-set softtabstop=4                      " set tab stops to 4 chars (not in front of line)
+set shiftwidth=2                       " set shift width to 4 chars (in front of a line, correspondent to smarttab)
+set tabstop=2                          " set tab stops to 4 chars (not in front of line)
+set softtabstop=2                      " set tab stops to 4 chars (not in front of line)
 set expandtab                          " turn tab into spaces
 set cursorline                         " mark current line
 set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
@@ -101,6 +102,11 @@ nnoremap <silent> <A-S-Left> :wincmd h<CR>
 nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
+" ycm mapping
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 
 " by typing ~~ we exit insert/visual mode
 nnoremap `` <Esc>
