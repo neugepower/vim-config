@@ -8,11 +8,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " let Vundle manage Vundle. Required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
@@ -28,6 +30,8 @@ Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'lervag/vimtex'
+Plugin 'airblade/vim-gitgutter'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -102,25 +106,30 @@ nnoremap <silent> <A-S-Left> :wincmd h<CR>
 nnoremap <silent> <A-S-Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
-" ycm mapping
+" YCM mapping
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
-
 " by typing ~~ we exit insert/visual mode
 nnoremap `` <Esc>
 inoremap `` <Esc>
 vnoremap `` <Esc>
+" Open latex preview
+nnoremap <silent> <leader>v :VimtexView<CR>
 
 " "}}}
 
 " File specific "{{{
 
-" force cpp files
+" cpp files
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
+" tex files
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
-au BufNewFile,BufRead *.tex set wrap
+au BufNewFile,BufRead *.tex setlocal wrap
+au BufNewFile,BufRead *.tex setlocal formatoptions=ant
+au BufNewFile,BufRead *.tex setlocal textwidth=120
+au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " "}}}
 
@@ -139,6 +148,12 @@ let g:alternateExtensions_ih = "cc,cci,ct,cti"
 
 " ycm settings
 let g:ycm_autoclose_preview_window_after_completion = 1
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+            \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+            \ ]
 
 " syntastic
 let g:syntastic_error_symbol = '✗✗'
@@ -150,9 +165,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger = '<s-right>'
+let g:UltiSnipsListSnippets = '<s-down>'
+let g:UltiSnipsJumpForwardTrigger = '<right>'
+let g:UltiSnipsJumpBackwardTrigger = '<left>'
 
 " Jedi (let ycm take over the control)
 let g:jedi#auto_initialization = 1
@@ -161,8 +177,11 @@ let g:jedi#popup_on_dot = 0
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
 
-" Eclim
-let g:EclimCompletionMethod = 'omnifunc'
+"Vimtex (Latex)
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_complete_enabled = 1
+let g:vimtex_complete_close_braces = 1
+let g:vimtex_complete_recursive_bib = 1
 
 " "}}}
 
