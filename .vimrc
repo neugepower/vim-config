@@ -32,6 +32,7 @@ Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'lervag/vimtex'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
