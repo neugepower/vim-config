@@ -36,7 +36,7 @@ Plugin 'raimondi/delimitmate'
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'molokai'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 
