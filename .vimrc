@@ -31,6 +31,7 @@ Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'lervag/vimtex'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
