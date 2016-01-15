@@ -37,7 +37,7 @@ Plugin 'raimondi/delimitmate'
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'molokai'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 
@@ -183,6 +183,10 @@ let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_complete_recursive_bib = 1
+
+"GitGutter
+let g:gitgutter_signs = 0
+let g:gitgutter_highlight_lines = 1
 
 " "}}}
 
