@@ -66,6 +66,7 @@ set wildmenu                           " activate wildmenu
 set undofile                           " enable undo files (see also undodir)
 set dir=~/.tmp,/tmp,$TEMP              " set for swap files
 set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
+set backupdir=~/tmp,/tmp,$TEMP         " set for backdir
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
 
