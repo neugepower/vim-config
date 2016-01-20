@@ -179,6 +179,10 @@ let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_complete_recursive_bib = 1
 
+"GitGutter
+let g:gitgutter_signs = 0
+let g:gitgutter_highlight_lines = 1
+
 " "}}}
 
 
