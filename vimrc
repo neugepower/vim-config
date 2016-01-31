@@ -33,6 +33,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'lervag/vimtex'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
+Plugin 'dbext.vim'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -67,6 +68,7 @@ set wildmenu                           " activate wildmenu
 set undofile                           " enable undo files (see also undodir)
 set dir=~/.tmp,/tmp,$TEMP              " set for swap files
 set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
+set backupdir=~/tmp,/tmp,$TEMP         " set for backdir
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
 
@@ -185,6 +187,7 @@ let g:vimtex_complete_close_braces = 1
 let g:vimtex_complete_recursive_bib = 1
 
 "GitGutter
+let g:gitgutter_enabled = 0
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 1
 
