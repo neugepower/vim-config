@@ -58,9 +58,9 @@ set nowrap                             " disable line wrapping after 80 chars
 set foldmethod=marker                  " enable folding by markers
 set smartindent                        " enable autoindenting for a new line
 set smarttab                           " enable smart tabbing
-set shiftwidth=2                       " set shift width to 4 chars (in front of a line, correspondent to smarttab)
-set tabstop=2                          " set tab stops to 4 chars (not in front of line)
-set softtabstop=2                      " set tab stops to 4 chars (not in front of line)
+set shiftwidth=2                       " set shift width (in front of a line, correspondent to smarttab)
+set tabstop=2                          " set tab stops (not in front of line)
+set softtabstop=2                      " set tab stops (not in front of line)
 set expandtab                          " turn tab into spaces
 set cursorline                         " mark current line
 set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
