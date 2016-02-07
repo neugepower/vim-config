@@ -194,7 +194,8 @@ let g:gitgutter_highlight_lines = 1
 
 "CtrlP
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" Use count to chose which command
+let g:ctrlp_cmd = 'exe "CtrlP".get(["Buffer", "", "MRU"], v:count)'
 
 "dbext
 let g:dbext_default_profile_PG = 'type=PGSQL:host=wr1:dbname=spmv_cneuge2s'
