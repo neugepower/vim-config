@@ -34,6 +34,7 @@ Plugin 'lervag/vimtex'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
 Plugin 'dbext.vim'
+Plugin 'ctrlp.vim'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -191,6 +192,9 @@ let g:gitgutter_enabled = 0
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 1
 
+"CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 " "}}}
 
 
