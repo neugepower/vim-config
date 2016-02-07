@@ -195,6 +195,10 @@ let g:gitgutter_highlight_lines = 1
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"dbext
+let g:dbext_default_profile_PG = 'type=PGSQL:host=wr1:dbname=spmv_cneuge2s'
+let g:dbext_default_profile = 'PG'
 " "}}}
 
 
