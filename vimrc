@@ -18,10 +18,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'wincent/Command-T'
+"Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive.git'
@@ -31,7 +30,7 @@ Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'lervag/vimtex'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
 Plugin 'dbext.vim'
 Plugin 'ctrlp.vim'
@@ -131,7 +130,7 @@ au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
 " tex files
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.tex setlocal wrap
-au BufNewFile,BufRead *.tex setlocal formatoptions=ant
+au BufNewFile,BufRead *.tex setlocal formatoptions=want
 au BufNewFile,BufRead *.tex setlocal textwidth=120
 au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
@@ -179,10 +178,10 @@ let g:jedi#auto_initialization = 1
 let g:jedi#popup_on_dot = 0
 
 " NERDTree
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
 
 "Vimtex (Latex)
-let g:vimtex_view_general_viewer = 'zathura'
+"let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_complete_recursive_bib = 1
