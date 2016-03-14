@@ -90,6 +90,9 @@ set viewoptions=folds,cursor           " save cursor position and folding on :mk
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
+" remove trailing whitespaces while saving
+autocmd BufWritePre * :%s/\s\+$//e
+
 " "}}}
 
 " Mapping "{{{
