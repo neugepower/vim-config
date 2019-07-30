@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle. Required!
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -34,6 +34,10 @@ Plugin 'lervag/vimtex'
 Plugin 'raimondi/delimitmate'
 Plugin 'dbext.vim'
 Plugin 'ctrlp.vim'
+Plugin 'pseewald/anyfold'
+"Plugin 'xavierd/clang_complete'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -43,7 +47,7 @@ Plugin 'tomasr/molokai'
 call vundle#end()
 
 
-" "}}} 
+" "}}}
 
 " General "{{{
 
@@ -54,12 +58,12 @@ set enc=utf-8                          " enable utf-8 (vim internal)
 set fileencoding=utf-8                 " enable utf-8 also for files
 set number                             " enable line numbers
 set nowrap                             " disable line wrapping after 80 chars
-set foldmethod=marker                  " enable folding by markers
+"set foldmethod=marker                  " enable folding by markers
 set smartindent                        " enable autoindenting for a new line
 set smarttab                           " enable smart tabbing
-set shiftwidth=2                       " set shift width (in front of a line, correspondent to smarttab)
-set tabstop=2                          " set tab stops (not in front of line)
-set softtabstop=2                      " set tab stops (not in front of line)
+set shiftwidth=4                       " set shift width (in front of a line, correspondent to smarttab)
+set tabstop=4                          " set tab stops (not in front of line)
+set softtabstop=4                      " set tab stops (not in front of line)
 set expandtab                          " turn tab into spaces
 set cursorline                         " mark current line
 set tags=./tags,tags;                  " look for a tag file (from current folder until root .)
@@ -71,6 +75,8 @@ set undodir=~/tmp,/tmp,$TEMP           " set for undofiles
 set backupdir=~/tmp,/tmp,$TEMP         " set for backdir
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
+set hlsearch                           " Highlight search terms
+set colorcolumn=80                     " Show colum bar
 
 set ignorecase
 set smartcase
@@ -106,10 +112,15 @@ nnoremap B :BufExplorer<CR>
 " Toogle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR>
 " Window switching
-nnoremap <silent> <A-S-Up> :wincmd k<CR>
-nnoremap <silent> <A-S-Down> :wincmd j<CR>
-nnoremap <silent> <A-S-Left> :wincmd h<CR>
-nnoremap <silent> <A-S-Right> :wincmd l<CR>
+" Do not work with Putty
+"nnoremap <silent> <A-S-Up> :wincmd k<CR>
+"nnoremap <silent> <A-S-Down> :wincmd j<CR>
+"nnoremap <silent> <A-S-Left> :wincmd h<CR>
+"nnoremap <silent> <A-S-Right> :wincmd l<CR>
+noremap <C-w><Up> :wincmd k<CR>
+noremap <C-w><Down> :wincmd j<CR>
+noremap <C-w><Left> :wincmd h<CR>
+noremap <C-w><Right> :wincmd l<CR>
 " write file from non root
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 " YCM mapping
@@ -123,8 +134,13 @@ inoremap `` <Esc>
 vnoremap `` <Esc>
 " Open latex preview
 nnoremap <silent> <leader>v :VimtexView<CR>
+" clangd
+nnoremap <C-g>e :LspDeclaration<CR>
+nnoremap <C-g>d :LspDefinition<CR>
+nnoremap <C-g>i :LspImplementation<CR>
 
-" "}}}
+
+"}}}
 
 " File specific "{{{
 
@@ -141,7 +157,7 @@ au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " Plugins configuration "{{{
 
-let g:tagbar_sort = 1 
+let g:tagbar_sort = 1
 let g:tagbar_width = 50
 
 " special mapping for senf (jump between files)
@@ -182,19 +198,20 @@ let g:jedi#popup_on_dot = 0
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
+let g:NERDTreeWinSize=45
 
-"Vimtex (Latex)
+" Vimtex (Latex)
 "let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_complete_recursive_bib = 1
 
-"GitGutter
+" GitGutter
 let g:gitgutter_enabled = 0
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 1
 
-"CtrlP
+" CtrlP
 let g:ctrlp_map = '<c-p>'
 " Use count to chose which command
 let g:ctrlp_cmd = 'exe "CtrlP".get(["Buffer", "", "MRU"], v:count)'
@@ -203,11 +220,44 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|o)$',
   \ }
 
-"dbext
+" dbext
 let g:dbext_default_profile_PG = 'type=PGSQL:host=wr1:dbname=spmv_cneuge2s'
 let g:dbext_default_profile = 'PG'
+
+" clang_complete
+"let g:clang_library_path = '/opt/bb/lib/llvm'
+
+" clangd
+if executable('clangd')
+    augroup lsp_clangd
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd', '-background-index']},
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+        autocmd FileType c setlocal omnifunc=lsp#complete
+        autocmd FileType cpp setlocal omnifunc=lsp#complete
+        autocmd FileType objc setlocal omnifunc=lsp#complete
+        autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    augroup end
+endif
+let g:lsp_signs_enabled = 1             " enable signs
+let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
+
+" anyfold
+let g:anyfold_fold_comments=0       " Fold comments?
+
+" Ack (use ag if available)
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
 " "}}}
 
 
-filetype plugin on			" enable after vundle
-filetype indent on			" enable after vundle
+filetype plugin on			            " enable after vundle
+filetype indent on			            " enable after vundle
+
+autocmd Filetype * AnyFoldActivate  " activate for all filetypes
+set foldlevel=0                     " close all folds
