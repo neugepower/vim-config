@@ -4,7 +4,7 @@
 set nocompatible                       " disable vi-incompatible mode
 filetype off				           " required for vundle
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle. Required!
