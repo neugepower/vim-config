@@ -29,10 +29,10 @@ Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
-Plugin 'dbext.vim'
+"Plugin 'dbext.vim'
 Plugin 'ctrlp.vim'
 Plugin 'pseewald/anyfold'
 "Plugin 'xavierd/clang_complete'
@@ -103,6 +103,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Mapping "{{{
 
+nnoremap <silent> <C-m><Down> :m .+1<CR>==
+nnoremap <silent> <C-m><Up> :m .-2<CR>==
+inoremap <silent> <C-m><Down> <Esc>:m .+1<CR>==gi
+inoremap <silent> <C-m><Up> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <C-m><Down> :m '>+1<CR>gv=gv
+vnoremap <silent> <C-m><Up> :m '<-2<CR>gv=gv
+
 " Toogle TagList
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 " Toogle Command-T
@@ -138,6 +145,9 @@ nnoremap <silent> <leader>v :VimtexView<CR>
 nnoremap <C-g>e :LspDeclaration<CR>
 nnoremap <C-g>d :LspDefinition<CR>
 nnoremap <C-g>i :LspImplementation<CR>
+"  Ack
+nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>s :Ack!<CR>
 
 
 "}}}
