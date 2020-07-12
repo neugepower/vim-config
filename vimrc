@@ -9,16 +9,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle. Required!
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
-"Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
@@ -29,15 +27,12 @@ Plugin 'bufexplorer.zip'
 Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'lervag/vimtex'
-"Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
-"Plugin 'dbext.vim'
 Plugin 'ctrlp.vim'
 Plugin 'pseewald/anyfold'
-"Plugin 'xavierd/clang_complete'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
+Plugin 'rust-lang/rust.vim'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'junegunn/fzf'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -77,6 +72,7 @@ set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
 set hlsearch                           " Highlight search terms
 set colorcolumn=80                     " Show colum bar
+set visualbell                         " Disable sound
 
 set ignorecase
 set smartcase
@@ -112,10 +108,6 @@ vnoremap <silent> <C-m><Up> :m '<-2<CR>gv=gv
 
 " Toogle TagList
 nnoremap <silent> <leader>b :TagbarToggle<CR>
-" Toogle Command-T
-nnoremap <silent> <leader>c :CommandT<CR>
-" Toogle BufferList
-nnoremap B :BufExplorer<CR>
 " Toogle NERDTree
 nnoremap <Leader>t :NERDTreeToggle<CR>
 " Window switching
@@ -139,16 +131,8 @@ nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 nnoremap `` <Esc>
 inoremap `` <Esc>
 vnoremap `` <Esc>
-" Open latex preview
-nnoremap <silent> <leader>v :VimtexView<CR>
-" clangd
-nnoremap <C-g>e :LspDeclaration<CR>
-nnoremap <C-g>d :LspDefinition<CR>
-nnoremap <C-g>i :LspImplementation<CR>
-"  Ack
-nnoremap <Leader>a :Ack!<Space>
-nnoremap <Leader>s :Ack!<CR>
-
+" FZF search
+nnoremap <silent> <leader>f :FZF<CR>
 
 "}}}
 
@@ -156,12 +140,6 @@ nnoremap <Leader>s :Ack!<CR>
 
 " cpp files
 au BufRead,BufNewFile *.cci,*.cti,*.ih,*.ct set filetype=cpp
-" tex files
-au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
-au BufNewFile,BufRead *.tex setlocal wrap
-au BufNewFile,BufRead *.tex setlocal formatoptions=want
-au BufNewFile,BufRead *.tex setlocal textwidth=120
-au BufNewFile,BufRead *.tex setlocal wrapmargin=0
 
 " "}}}
 
@@ -210,17 +188,6 @@ let g:jedi#popup_on_dot = 0
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
 let g:NERDTreeWinSize=45
 
-" Vimtex (Latex)
-"let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_complete_enabled = 1
-let g:vimtex_complete_close_braces = 1
-let g:vimtex_complete_recursive_bib = 1
-
-" GitGutter
-let g:gitgutter_enabled = 0
-let g:gitgutter_signs = 0
-let g:gitgutter_highlight_lines = 1
-
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 " Use count to chose which command
@@ -230,38 +197,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|o)$',
   \ }
 
-" dbext
-let g:dbext_default_profile_PG = 'type=PGSQL:host=wr1:dbname=spmv_cneuge2s'
-let g:dbext_default_profile = 'PG'
-
-" clang_complete
-"let g:clang_library_path = '/opt/bb/lib/llvm'
-
-" clangd
-if executable('clangd')
-    augroup lsp_clangd
-        autocmd!
-        autocmd User lsp_setup call lsp#register_server({
-                    \ 'name': 'clangd',
-                    \ 'cmd': {server_info->['clangd', '-background-index']},
-                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-                    \ })
-        autocmd FileType c setlocal omnifunc=lsp#complete
-        autocmd FileType cpp setlocal omnifunc=lsp#complete
-        autocmd FileType objc setlocal omnifunc=lsp#complete
-        autocmd FileType objcpp setlocal omnifunc=lsp#complete
-    augroup end
-endif
-let g:lsp_signs_enabled = 1             " enable signs
-let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
-
 " anyfold
 let g:anyfold_fold_comments=0       " Fold comments?
-
-" Ack (use ag if available)
-if executable('ag')
-    let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
 
 " "}}}
 
