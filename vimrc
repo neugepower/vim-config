@@ -28,7 +28,6 @@ Plugin 'AutoTag'
 Plugin 'a.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'raimondi/delimitmate'
-Plugin 'ctrlp.vim'
 Plugin 'pseewald/anyfold'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jremmen/vim-ripgrep'
@@ -187,15 +186,6 @@ let g:jedi#popup_on_dot = 0
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
 let g:NERDTreeWinSize=45
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-" Use count to chose which command
-let g:ctrlp_cmd = 'exe "CtrlP".get(["Buffer", "", "MRU"], v:count)'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|o)$',
-  \ }
 
 " anyfold
 let g:anyfold_fold_comments=0       " Fold comments?
