@@ -133,6 +133,12 @@ vnoremap `` <Esc>
 " FZF search
 nnoremap <silent> <leader>f :FZF<CR>
 
+" Tab handling
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+
 "}}}
 
 " File specific "{{{
