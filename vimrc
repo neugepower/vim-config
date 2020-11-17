@@ -32,6 +32,7 @@ Plugin 'pseewald/anyfold'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
+Plugin 'nvie/vim-flake8'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
@@ -175,6 +176,7 @@ let g:syntastic_error_symbol = '✗✗'
 let g:syntastic_warning_symbol = '⚠⚠'
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_check_on_open = 1
+let g:syntastic_python_checkers = ['flake8']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
