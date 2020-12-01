@@ -33,6 +33,9 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'nvie/vim-flake8'
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
