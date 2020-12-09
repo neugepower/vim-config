@@ -36,6 +36,8 @@ Plugin 'nvie/vim-flake8'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" dockerfile
+Plugin 'ekalinin/Dockerfile.vim'
 
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
