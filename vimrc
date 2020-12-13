@@ -38,7 +38,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " dockerfile
 Plugin 'ekalinin/Dockerfile.vim'
-
+" tab behavior
+Plugin 'ervandew/supertab'
 " colorschemes
 Plugin 'michalbachowski/vim-wombat256mod.git'
 Plugin 'altercation/vim-colors-solarized.git'
@@ -168,13 +169,8 @@ let g:alternateExtensions_hh = "cc,cci,ct,cti"
 let g:alternateExtensions_ih = "cc,cci,ct,cti"
 
 " ycm settings
-let g:ycm_autoclose_preview_window_after_completion = 1
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-            \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-            \ ]
+let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>'] " accept completion
+let g:ycm_complete_in_comments = 1
 
 " syntastic
 let g:syntastic_error_symbol = '✗✗'
@@ -202,6 +198,16 @@ let g:NERDTreeWinSize=45
 
 " anyfold
 let g:anyfold_fold_comments=0       " Fold comments?
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " "}}}
 
