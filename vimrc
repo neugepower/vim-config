@@ -44,6 +44,8 @@ Plugin 'ervandew/supertab'
 Plugin 'michalbachowski/vim-wombat256mod.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tomasr/molokai'
+" commenting
+Plugin 'preservim/nerdcommenter'
 
 call vundle#end()
 
@@ -131,8 +133,8 @@ cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 " YCM mapping
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
 " by typing ~~ we exit insert/visual mode
 nnoremap `` <Esc>
 inoremap `` <Esc>
@@ -194,7 +196,7 @@ let g:jedi#popup_on_dot = 0
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=30
 
 " anyfold
 let g:anyfold_fold_comments=0       " Fold comments?
