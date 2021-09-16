@@ -46,6 +46,8 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tomasr/molokai'
 " commenting
 Plugin 'preservim/nerdcommenter'
+" formatting
+Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()
 
@@ -210,6 +212,9 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+" Clang Format
+let g:clang_format#command = 'bde-format'
 
 " "}}}
 
