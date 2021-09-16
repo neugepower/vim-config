@@ -62,7 +62,6 @@ set nocompatible                       " disable vi-incompatible mode
 set enc=utf-8                          " enable utf-8 (vim internal)
 set fileencoding=utf-8                 " enable utf-8 also for files
 set number                             " enable line numbers
-set nowrap                             " disable line wrapping after 80 chars
 "set foldmethod=marker                  " enable folding by markers
 set smartindent                        " enable autoindenting for a new line
 set smarttab                           " enable smart tabbing
@@ -83,6 +82,7 @@ set backspace=indent,eol,start         " Please Fill Me!!
 set hlsearch                           " Highlight search terms
 set colorcolumn=80                     " Show colum bar
 set visualbell                         " Disable sound
+set wrap linebreak nolist              " Soft-break words at 80
 
 set ignorecase
 set smartcase
