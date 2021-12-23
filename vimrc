@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle. Required!
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -80,9 +80,10 @@ set backupdir=~/tmp,/tmp,$TEMP         " set for backdir
 set laststatus=2                       " show statusline all the time
 set backspace=indent,eol,start         " Please Fill Me!!
 set hlsearch                           " Highlight search terms
-set colorcolumn=80                     " Show colum bar
+set colorcolumn=120                    " Show colum bar
+set textwidth=120                      " Use 120 text width
 set visualbell                         " Disable sound
-set wrap linebreak nolist              " Soft-break words at 80
+set wrap linebreak nolist              " Soft-break words at textwidth
 
 set ignorecase
 set smartcase
@@ -199,6 +200,7 @@ let g:jedi#popup_on_dot = 0
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.class$', '.aux$']
 let g:NERDTreeWinSize=30
+let NERDTreeShowHidden=1
 
 " anyfold
 let g:anyfold_fold_comments=0       " Fold comments?
