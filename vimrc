@@ -4,52 +4,47 @@
 set nocompatible                       " disable vi-incompatible mode
 filetype off				           " required for vundle
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-" let Vundle manage Vundle. Required!
-Plugin 'VundleVim/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'majutsushi/tagbar'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'pangloss/vim-javascript'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'python.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'AutoTag'
-Plugin 'a.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'raimondi/delimitmate'
-Plugin 'pseewald/anyfold'
-Plugin 'rust-lang/rust.vim'
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'junegunn/fzf'
-Plugin 'nvie/vim-flake8'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'pangloss/vim-javascript'
+Plug 'marijnh/tern_for_vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'craigemery/vim-autotag'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'raimondi/delimitmate'
+Plug 'pseewald/anyfold'
+Plug 'rust-lang/rust.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
+Plug 'nvie/vim-flake8'
 " markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 " dockerfile
-Plugin 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim'
 " tab behavior
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 " colorschemes
-Plugin 'michalbachowski/vim-wombat256mod.git'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'tomasr/molokai'
+Plug 'michalbachowski/vim-wombat256mod'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 " commenting
-Plugin 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 " formatting
-Plugin 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 
-call vundle#end()
+call plug#end()
 
 
 " "}}}
